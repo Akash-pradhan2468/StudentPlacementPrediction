@@ -1,7 +1,7 @@
 import numpy as np
 from flask import Flask,request,render_template
 import pickle
-flask_app=Flask(__name__)
+app=Flask(__name__)
 model=pickle.load(open("model.pkl",'rb'))
 
 
@@ -24,4 +24,4 @@ def predict():
     return render_template("index.html",prediction_text="{}".format(ans))
 
 if __name__=="__main__":
-    flask_app.run(debug=True)
+    app.run(debug=True)
